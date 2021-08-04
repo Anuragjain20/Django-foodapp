@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+
+
+
+<section class="container py-4 py-sm-5">
+    <div class="row pt-3 pt-sm-0">
+        {% for item in restraunts_menu %}
+        <!--<div class=" mx-auto mb-grid-gutter">-->
+        <div class="card mx-auto my-4" style="width: 18rem;">
+            <img class="img-fluid w-100" src="/static/{{item.menu_image}}" alt="Sample" style="width: 100rem!important;height: 20rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{item.food_item_type}}</h5>
+                <p class="card-text">{{item.menu_price}}</p>
+                <p class="card-text">{{item.menu_name}}</p>
+                <p class="card-text">{{item.menu_type}}</p>
+                <p class="card-text">{{item.menu_description}}</p>
+
+                <div class="d-flex align-items-center justify-content-between">
+
+                    <a href="{% url  'add_cart' item.id %}" class="btn btn-primary btn-sm data-toggle=" toast "
+                            data-target="#cart-toast ">+<i class="czi-cart font-size-base ml-1 "></i>
+                        
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+     <!-- </div>-->  
+
+
+
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

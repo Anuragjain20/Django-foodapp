@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+
+
+
+<section class="container py-4 py-sm-5">
+    <div class="row pt-3 pt-sm-0">
+        {% for restraunt in restraunts %}
+        <div class="col-md-3 col-sm-6 mb-grid-gutter">
+            <div class="card" style="width: 18rem;">
+                <img class="img-fluid w-100" src="/static/{{restraunt.restraunt_image}}" alt="Sample">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{restraunt.restraunt_name}}</h5>
+                    <p class="card-text">{{restraunt.restraunt_address}}</p>
+                    <p class="card-text">{{restraunt.restraunt_pincode}}</p>
+
+                    <p class="card-text">{{restraunt.restraunt_description}}</p>
+                    <a href="{% url 'menu' restraunt.id %}" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

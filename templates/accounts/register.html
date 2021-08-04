@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+
+
+
+
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+
+
+        {% if messages %} {% for message in messages %}
+        <p style="background-color: aqua; width:50%;margin:auto;padding:2px;text-align:center;">{{ message }}</p> {% endfor %} {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="user-details">
+
+
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Phone</span>
+                    <input type="text" name="phone" placeholder="Enter your number" required>
+                </div>
+
+
+
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
